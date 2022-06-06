@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+        <main class="container py-5 text-center">
+
+    <table class="table tablestriped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">TOTAL</th>
+            </tr>
+        </thead>
+       <tbody>
+       {% for row in index %}
+                <tr>
+                    <td class="text-start">{{ row["symbol"] }}</td>
+                    <td class="text-end">{{ row["share"] }}</td>
+                    <td class="text-end">{{ row["price"] | usd }}</td>
+                    {% set times = row["price"] * row["share"] %}
+                    <td class="text-end">{{ times | usd }}</td>
+                </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
+                <td class="border-0 text-end">{{ users | usd }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
+                {% set plus = sum + users %}
+                <td class="border-0 w-bold text-end">{{ plus | usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+        </main>
+{% endblock %}

@@ -1,0 +1,9 @@
+sort1 uses: Bubble sort
+How do you know?: It is the slowest one of all three binary files, except when sorting sorted numbers. Which shows that sorted numbers
+reduces the amount of work required for bubble sort to swap numbers.
+sort2 uses: Merge sort
+How do you know?: Because it is the fastest one of all three binary files. It also seems to show sorted number half by half when sorting big numbers.
+sort3 uses: Selection sort
+How do you know?: It performs poorly in comparison to sort1 when sorting sorted number because bubble sort (sort1 guess) works faster on sorted numbers
+than selection sort. Selection sort iterates through all of the list first to check for the smallest number while bubble sort just swaps
+pairs of numbers if the order is incorrect, which there isn't on sorted numbers.
